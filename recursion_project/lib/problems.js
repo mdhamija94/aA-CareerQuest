@@ -37,10 +37,8 @@ function lucasNumber(n) {
 // sumArray([4, 10, -1, 2]) // => 15
 function sumArray(array) {
     if (!array.length) return 0;
-    if (array.length === 1) return array[0];
 
-    const sum = array.shift() + sumArray(array);
-    return sum;
+    return array.shift() + sumArray(array);
 }
 
 
@@ -56,7 +54,7 @@ function sumArray(array) {
 // reverseString("internet")    // => "tenretni"
 // reverseString("friends")     // => "sdneirf"
 function reverseString(str) {
-    if (str.length <= 1) return str;
+    if (str.length === 0) return str;
 
     return str[str.length - 1] + reverseString(str.slice(0, str.length - 1));
 }
@@ -120,14 +118,14 @@ function pow(base, exponent) {
 function flatten(data) {
     if (!Array.isArray(data)) return [ data ];
 
-    let allFlattened = [];
+    let all = [];
     
     data.forEach((el) => {
         let flattened = flatten(el);
-        allFlattened.push(...flattened);
+        all.push(...flattened);
     });
 
-    return allFlattened;
+    return all;
 }
 
 // Write a function, fileFinder(directories, targetFile), that accepts an object representing directories and a string respresenting a filename.
